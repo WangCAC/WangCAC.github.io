@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wangcac.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="记一次破解网课视频禁止拖动引入java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次破解网课视频禁止拖动">
+<meta property="og:url" content="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/index.html">
+<meta property="og:site_name" content="起风了">
+<meta property="og:description" content="记一次破解网课视频禁止拖动引入java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
+<meta property="og:image" content="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%A5%87%E8%BF%B9.png">
+<meta property="og:image" content="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%AE%8C%E6%88%90.png">
+<meta property="article:published_time" content="2022-03-29T09:40:34.000Z">
+<meta property="article:modified_time" content="2022-03-29T10:09:03.851Z">
+<meta property="article:author" content="WangCAC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
+
+<link rel="canonical" href="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>记一次破解网课视频禁止拖动 | 起风了</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">起风了</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">俺要成为大佬呀( •̀ ω •́ )✧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="WangCAC">
+      <meta itemprop="description" content="一菜鸡的成长史">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="起风了">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          记一次破解网课视频禁止拖动
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-29 17:40:34 / 修改时间：18:09:03" itemprop="dateCreated datePublished" datetime="2022-03-29T17:40:34+08:00">2022-03-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>705</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="记一次破解网课视频禁止拖动"><a href="#记一次破解网课视频禁止拖动" class="headerlink" title="记一次破解网课视频禁止拖动"></a>记一次破解网课视频禁止拖动</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。</p>
+<span id="more"></span>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>诺，就是这，无法拖动！！！，虽然理解老师的本意，不希望我们囫囵吞枣，但。。这是难不倒我滴ヾ(•ω•&#96;)o</p>
+<p><img src="/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png"></p>
+<h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>按F12打开控制台的抓包功能，经过分析，只有4~5个js，哼，只有这几个小不点儿怎么可能难倒我，我就看了整整1小时，然后只知道找错了，但后来受到一位大佬的启发。</p>
+<p>我们不妨从原理切入，首先可以肯定，禁止拖动是在js的基础上实现的，视频标签是video，自带各种功能，而图中的显然不是自带的（当然不是看出来的，而是当时用“document.querySelector(‘video’).controls”查了下，结果返回false），于是就“document.querySelector(‘video’).controls&#x3D;true”，结果奇迹出现了，</p>
+<p><img src="/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%A5%87%E8%BF%B9.png"></p>
+<p>试了试，果然可以拖动，之后的工作就简单了，去除原有的拖动条，显示自带的拖动条，于是到ChromeStore下载了Reres插件，该插件可以拦截并替换js，于是我将原请求的一个js文件下载到本地，加上自己的js代码，就大功告成了。</p>
+<p><img src="/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%AE%8C%E6%88%90.png"></p>
+<p>其实在控制台直接输代码就行，但每次都输有点麻烦。</p>
+<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><p>这次的探索加深了我对网页的理解，js层面上，貌似篡改要容易得多，同时也意外学会了刷网课的方法（当然是开玩笑滴啦，不会真有人以为我要刷网课吧），原来控制台的妙用还挺多&#x3D;。&#x3D;</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="WangCAC 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="WangCAC 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>WangCAC
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/" title="记一次破解网课视频禁止拖动">http://wangcac.github.io/2022/03/29/记一次破解网课视频禁止拖动/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/26/Servlet%E4%BD%BF%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5mysql%E6%8A%A5%E9%94%99-ClassNOTFoundException/" rel="prev" title="Servlet使用JDBC连接mysql报错'ClassNOTFoundException'">
+      <i class="fa fa-chevron-left"></i> Servlet使用JDBC连接mysql报错'ClassNOTFoundException'
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">记一次破解网课视频禁止拖动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">解决过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E8%8E%B7"><span class="nav-number">1.4.</span> <span class="nav-text">收获</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="WangCAC"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">WangCAC</p>
+  <div class="site-description" itemprop="description">一菜鸡的成长史</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/WangCAC" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;WangCAC" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+	  
+		<!-- require APlayer -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+		<!-- require MetingJS-->
+		<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script> 
+		<!--网易云-->   
+		<meting-js
+		  server="netease"
+		  id="7347128904"
+		  type="playlist" 
+		  mini="false"
+		  fixed="false"
+		  list-folded="true"
+		  autoplay="true"
+		  volume="0.4"
+		  theme="#222222"
+		  order="random"
+		  loop="all"
+		  preload="auto"
+		  mutex="true">
+		</meting-js>
+		
+		
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Powered By-WangCAC</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">6k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">5 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
