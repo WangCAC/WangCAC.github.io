@@ -17,33 +17,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wangcac.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="记一次破解网课视频禁止拖动引入java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次破解网课视频禁止拖动">
-<meta property="og:url" content="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/index.html">
+<meta property="og:site_name" content="WangCAC的博客">
 <meta property="og:description" content="记一次破解网课视频禁止拖动引入java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
-<meta property="og:image" content="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%A5%87%E8%BF%B9.png">
-<meta property="og:image" content="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%AE%8C%E6%88%90.png">
+<meta property="og:image" content="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
+<meta property="og:image" content="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%A5%87%E8%BF%B9.png">
+<meta property="og:image" content="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%AE%8C%E6%88%90.png">
 <meta property="article:published_time" content="2022-03-29T09:40:34.000Z">
 <meta property="article:modified_time" content="2022-03-29T10:09:03.851Z">
 <meta property="article:author" content="WangCAC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
+<meta name="twitter:image" content="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
 
 
-<link rel="canonical" href="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
+<link rel="canonical" href="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/","path":"2022/03/29/记一次破解网课视频禁止拖动/","title":"记一次破解网课视频禁止拖动"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/","path":"2022/03/29/记一次破解网课视频禁止拖动/","title":"记一次破解网课视频禁止拖动"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>记一次破解网课视频禁止拖动 | Hexo</title>
+<title>记一次破解网课视频禁止拖动 | WangCAC的博客</title>
   
 
 
@@ -66,6 +66,9 @@
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -73,7 +76,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">Hexo</p>
+      <p class="site-title">WangCAC的博客</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -86,6 +89,10 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
 
 
 
@@ -114,6 +121,8 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="WangCAC"
+      src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">WangCAC</p>
   <div class="site-description" itemprop="description">俺要成为大佬呀( •̀ ω •́ )✧</div>
 </div>
@@ -121,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -154,7 +163,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
+    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -162,12 +171,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="WangCAC的博客">
       <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="记一次破解网课视频禁止拖动 | Hexo">
+      <meta itemprop="name" content="记一次破解网课视频禁止拖动 | WangCAC的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -225,6 +234,23 @@
     
 
     <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>WangCAC
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://wangcac.github.io/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/" title="记一次破解网课视频禁止拖动">https://wangcac.github.io/2022/03/29/记一次破解网课视频禁止拖动/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
 
         
 
@@ -263,7 +289,7 @@
     </span>
     <span class="author" itemprop="copyrightHolder">WangCAC</span>
   </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
     </div>
