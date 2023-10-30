@@ -19,25 +19,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="记一次破解网课视频禁止拖动引入java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。 问题诺，就是这，无法拖动！！！，虽然理解老师的本意，不希望我们囫囵吞枣，但。。这是难不倒我滴ヾ(•ω•&#96;)o  解决过程按F12打">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次破解网课视频禁止拖动">
+<meta property="og:url" content="http://example.com/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+<meta property="og:description" content="记一次破解网课视频禁止拖动引入java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。 问题诺，就是这，无法拖动！！！，虽然理解老师的本意，不希望我们囫囵吞枣，但。。这是难不倒我滴ヾ(•ω•&#96;)o  解决过程按F12打">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/.com//workpath/blogs/source_posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
+<meta property="og:image" content="http://example.com/.com//workpath/blogs/source_posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%A5%87%E8%BF%B9.png">
+<meta property="og:image" content="http://example.com/.com//workpath/blogs/source_posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
+<meta property="article:published_time" content="2023-10-29T09:45:20.000Z">
+<meta property="article:modified_time" content="2023-10-29T10:02:23.371Z">
 <meta property="article:author" content="WangCAC">
+<meta property="article:tag" content="破解">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//workpath/blogs/source_posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/","path":"2023/10/29/记一次破解网课视频禁止拖动/","title":"记一次破解网课视频禁止拖动"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo</title>
+<title>记一次破解网课视频禁止拖动 | Hexo</title>
   
 
 
@@ -67,7 +74,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
+      <p class="site-title">Hexo</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -89,7 +96,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -102,6 +109,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">记一次破解网课视频禁止拖动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">解决过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E8%8E%B7"><span class="nav-number">1.4.</span> <span class="nav-text">收获</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,16 +149,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -164,13 +173,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="name" content="记一次破解网课视频禁止拖动 | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/" class="post-title-link" itemprop="url">记一次破解网课视频禁止拖动</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          记一次破解网课视频禁止拖动
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -202,8 +211,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="记一次破解网课视频禁止拖动"><a href="#记一次破解网课视频禁止拖动" class="headerlink" title="记一次破解网课视频禁止拖动"></a>记一次破解网课视频禁止拖动</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="记一次破解网课视频禁止拖动"><a href="#记一次破解网课视频禁止拖动" class="headerlink" title="记一次破解网课视频禁止拖动"></a>记一次破解网课视频禁止拖动</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>诺，就是这，无法拖动！！！，虽然理解老师的本意，不希望我们囫囵吞枣，但。。这是难不倒我滴ヾ(•ω•&#96;)o</p>
 <p><img src="/.com//workpath\blogs\source_posts\记一次破解网课视频禁止拖动\万恶.png"></p>
 <h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>按F12打开控制台的抓包功能，经过分析，只有4~5个js，哼，只有这几个小不点儿怎么可能难倒我，我就看了整整1小时，然后只知道找错了，但后来受到一位大佬的启发。</p>
@@ -214,7 +222,6 @@
 <p>其实在控制台直接输代码就行，但每次都输有点麻烦。</p>
 <h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><p>这次的探索加深了我对网页的理解，js层面上，貌似篡改要容易得多，同时也意外学会了刷网课的方法（当然是开玩笑滴啦，不会真有人以为我要刷网课吧），原来控制台的妙用还挺多&#x3D;。&#x3D;</p>
 
-      
     </div>
 
     
@@ -222,11 +229,16 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/%E7%A0%B4%E8%A7%A3/" rel="tag"># 破解</a>
+          </div>
+
+        
+
     </footer>
   </article>
 </div>
+
 
 
 
