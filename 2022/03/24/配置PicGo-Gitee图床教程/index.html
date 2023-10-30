@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="配置PicGo+Gitee图床教程(Gitee图床已失效)引入下午下课后在教室正漫无目的翻看大佬的帖子，不太理解“image bed”的含义，问了下度娘才恍然大悟，说白了就是专门存储图片的服务，又看到很多大佬写blog都配下图床，想想刚配好的blog，因为放在github的缘故，延迟感人，图片加载速度真是一言难尽。。于是利用Gitee也配置了自己的图床，并且已经完成图片迁移。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置PicGo+Gitee图床教程">
+<meta property="og:url" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="配置PicGo+Gitee图床教程(Gitee图床已失效)引入下午下课后在教室正漫无目的翻看大佬的帖子，不太理解“image bed”的含义，问了下度娘才恍然大悟，说白了就是专门存储图片的服务，又看到很多大佬写blog都配下图床，想想刚配好的blog，因为放在github的缘故，延迟感人，图片加载速度真是一言难尽。。于是利用Gitee也配置了自己的图床，并且已经完成图片迁移。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/20220324180506.png">
+<meta property="og:image" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/20220324180639.png">
+<meta property="og:image" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/20220324180849.png">
+<meta property="og:image" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/20220324180944.png">
+<meta property="og:image" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/20220324181201.png">
+<meta property="og:image" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/20220324181508.png">
+<meta property="article:published_time" content="2022-03-24T09:54:21.000Z">
+<meta property="article:modified_time" content="2022-03-26T05:59:57.513Z">
+<meta property="article:author" content="WangCAC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/20220324180506.png">
+
+
+<link rel="canonical" href="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/","path":"2022/03/24/配置PicGo-Gitee图床教程/","title":"配置PicGo+Gitee图床教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>配置PicGo+Gitee图床教程 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B-Gitee%E5%9B%BE%E5%BA%8A%E5%B7%B2%E5%A4%B1%E6%95%88"><span class="nav-number">1.</span> <span class="nav-text">配置PicGo+Gitee图床教程(Gitee图床已失效)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E7%A8%8B%EF%BC%88%E6%B3%A8%EF%BC%9A%E9%A1%BA%E5%BA%8F%E6%97%A0%E6%89%80%E8%B0%93%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">教程（注：顺序无所谓）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%A6%96%E5%85%88%E7%99%BB%E5%BD%95Gitee%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AD%98%E5%82%A8image%E7%9A%84%E5%BA%93%E3%80%82"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.首先登录Gitee，新建一个存储image的库。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%82%B9%E5%87%BB%E4%B8%AA%E4%BA%BA%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%96%B0%E5%BB%BA%E7%A7%81%E4%BA%BA%E4%BB%A4%E7%89%8C%EF%BC%8C%E6%8A%8Atoken%E5%AD%98%E5%88%B0%E7%94%B5%E8%84%91%E4%B8%8A"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.点击个人设置，新建私人令牌，把token存到电脑上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85PicGo%EF%BC%8C%E5%AE%89%E8%A3%85%E5%A5%BD%E6%89%93%E5%BC%80%E6%98%AF%E8%BF%99%E6%A0%B7%E6%BB%B4"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.下载并安装PicGo，安装好打开是这样滴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%B8%8B%E8%BD%BD%E5%A6%82%E5%9B%BE%E6%8F%92%E4%BB%B6%EF%BC%88%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8D%E8%87%AA%E5%B8%A6Gitee%E6%94%AF%E6%8C%81%EF%BC%8C%E9%9C%80%E8%A6%81%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%EF%BC%89"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.下载如图插件（新版本不自带Gitee支持，需要下载插件）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%89%93%E5%BC%80%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE%EF%BC%8C%E7%82%B9%E5%87%BBGitee"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.打开图床设置，点击Gitee</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-repo%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">1.repo设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-branch%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">2.branch设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-token%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">3.token设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-path%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">4.path设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-customPath%E5%92%8CcustomUrl%E4%B8%8D%E7%94%A8%E8%AE%BE%E7%BD%AE%EF%BC%8C%E7%A9%BA%E7%9D%80%E5%B0%B1%E8%A1%8C%EF%BC%8C%E7%84%B6%E5%90%8E%E7%82%B9%E7%A1%AE%E5%AE%9A"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">5.customPath和customUrl不用设置，空着就行，然后点确定</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end%EF%BC%9A%E8%87%B3%E6%AD%A4%E5%B7%B2%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%AF%95%EF%BC%8C%E6%90%AD%E9%85%8DSnipaste%E6%88%AA%E5%9B%BE%E7%A5%9E%E5%99%A8%E5%A4%AA%E7%88%BD%E4%BA%86%E6%9C%89%E6%9C%A8%E6%9C%89"><span class="nav-number">1.2.6.</span> <span class="nav-text">end：至此已配置完毕，搭配Snipaste截图神器太爽了有木有</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">WangCAC</p>
+  <div class="site-description" itemprop="description">俺要成为大佬呀( •̀ ω •́ )✧</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="配置PicGo+Gitee图床教程 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          配置PicGo+Gitee图床教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-24 17:54:21" itemprop="dateCreated datePublished" datetime="2022-03-24T17:54:21+08:00">2022-03-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-26 13:59:57" itemprop="dateModified" datetime="2022-03-26T13:59:57+08:00">2022-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="配置PicGo-Gitee图床教程-Gitee图床已失效"><a href="#配置PicGo-Gitee图床教程-Gitee图床已失效" class="headerlink" title="配置PicGo+Gitee图床教程(Gitee图床已失效)"></a><del>配置PicGo+Gitee图床教程(Gitee图床已失效)</del></h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>下午下课后在教室正漫无目的翻看大佬的帖子，不太理解“image bed”的含义，问了下度娘才恍然大悟，说白了就是专门存储图片的服务，又看到很多大佬写blog都配下图床，想想刚配好的blog，因为放在github的缘故，延迟感人，图片加载速度真是一言难尽。。于是利用Gitee也配置了自己的图床，并且已经完成图片迁移。</p>
+ <span id="more"></span>
+
+<h2 id="教程（注：顺序无所谓）"><a href="#教程（注：顺序无所谓）" class="headerlink" title="教程（注：顺序无所谓）"></a>教程（注：顺序无所谓）</h2><h3 id="1-首先登录Gitee，新建一个存储image的库。"><a href="#1-首先登录Gitee，新建一个存储image的库。" class="headerlink" title="1.首先登录Gitee，新建一个存储image的库。"></a>1.首先登录Gitee，新建一个存储image的库。</h3><p><img src="20220324180506.png"></p>
+<h3 id="2-点击个人设置，新建私人令牌，把token存到电脑上"><a href="#2-点击个人设置，新建私人令牌，把token存到电脑上" class="headerlink" title="2.点击个人设置，新建私人令牌，把token存到电脑上"></a>2.点击个人设置，新建私人令牌，把token存到电脑上</h3><p><img src="20220324180639.png"></p>
+<h3 id="3-下载并安装PicGo，安装好打开是这样滴"><a href="#3-下载并安装PicGo，安装好打开是这样滴" class="headerlink" title="3.下载并安装PicGo，安装好打开是这样滴"></a>3.下载并安装<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/picgo/releases">PicGo</a>，安装好打开是这样滴</h3><p><img src="20220324180849.png"></p>
+<h3 id="4-下载如图插件（新版本不自带Gitee支持，需要下载插件）"><a href="#4-下载如图插件（新版本不自带Gitee支持，需要下载插件）" class="headerlink" title="4.下载如图插件（新版本不自带Gitee支持，需要下载插件）"></a>4.下载如图插件（新版本不自带Gitee支持，需要下载插件）</h3><p><img src="20220324180944.png"></p>
+<h3 id="5-打开图床设置，点击Gitee"><a href="#5-打开图床设置，点击Gitee" class="headerlink" title="5.打开图床设置，点击Gitee"></a>5.打开图床设置，点击Gitee</h3><p><img src="20220324181201.png"></p>
+<h4 id="1-repo设置"><a href="#1-repo设置" class="headerlink" title="1.repo设置"></a>1.repo设置</h4><p>复制仓库链接上面划红线部分的，及”用户名+仓库名”</p>
+<p><img src="20220324181508.png"></p>
+<h4 id="2-branch设置"><a href="#2-branch设置" class="headerlink" title="2.branch设置"></a>2.branch设置</h4><p>直接填 master</p>
+<h4 id="3-token设置"><a href="#3-token设置" class="headerlink" title="3.token设置"></a>3.token设置</h4><p>就是你复制的私人密钥的token</p>
+<h4 id="4-path设置"><a href="#4-path设置" class="headerlink" title="4.path设置"></a>4.path设置</h4><p>一般填 img （注：其实就是你仓库存放图片的路径，没有的话他会自动创建）</p>
+<h4 id="5-customPath和customUrl不用设置，空着就行，然后点确定"><a href="#5-customPath和customUrl不用设置，空着就行，然后点确定" class="headerlink" title="5.customPath和customUrl不用设置，空着就行，然后点确定"></a>5.customPath和customUrl不用设置，空着就行，然后点确定</h4><h3 id="end：至此已配置完毕，搭配Snipaste截图神器太爽了有木有"><a href="#end：至此已配置完毕，搭配Snipaste截图神器太爽了有木有" class="headerlink" title="end：至此已配置完毕，搭配Snipaste截图神器太爽了有木有"></a>end：至此已配置完毕，搭配Snipaste截图神器太爽了有木有</h3>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/03/22/%E8%8C%AB%E8%8C%AB%E5%89%8D%E8%B7%AF/" rel="prev" title="茫茫前路">
+                  <i class="fa fa-angle-left"></i> 茫茫前路
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/" rel="next" title="vscode配置c/c++环境">
+                  vscode配置c/c++环境 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">WangCAC</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

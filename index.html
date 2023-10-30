@@ -114,19 +114,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -151,7 +146,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/30/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1Bete%200.1.0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +164,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/" class="post-title-link" itemprop="url">记一次破解网课视频禁止拖动</a>
+          <a href="/2023/10/30/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1Bete%200.1.0/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -180,14 +175,327 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-10-29 17:45:20" itemprop="dateCreated datePublished" datetime="2023-10-29T17:45:20+08:00">2023-10-29</time>
+      <time title="创建时间：2023-10-30 10:04:45" itemprop="dateCreated datePublished" datetime="2023-10-30T10:04:45+08:00">2023-10-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-30 09:54:14" itemprop="dateModified" datetime="2023-10-30T09:54:14+08:00">2023-10-30</time>
+      <time title="修改时间：2022-10-19 00:01:43" itemprop="dateModified" datetime="2022-10-19T00:01:43+08:00">2022-10-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="自动打卡Bete-0-1-0"><a href="#自动打卡Bete-0-1-0" class="headerlink" title="自动打卡Bete 0.1.0"></a>自动打卡Bete 0.1.0</h1><h4 id="autodaka-js"><a href="#autodaka-js" class="headerlink" title="autodaka.js"></a>autodaka.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入模块</span></span><br><span class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">&#x27;puppeteer&#x27;</span>); </span><br><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">&#x27;mysql&#x27;</span>);</span><br><span class="line"><span class="comment">// 读取json配置文件</span></span><br><span class="line"><span class="keyword">var</span> config=<span class="built_in">require</span>(<span class="string">&quot;./config.json&quot;</span>);</span><br><span class="line"><span class="comment">// 创建mysql连接（配置）</span></span><br><span class="line"><span class="keyword">const</span> conn = mysql.<span class="title function_">createConnection</span>(&#123;</span><br><span class="line">    <span class="comment">// 主机ip（域名）</span></span><br><span class="line">    <span class="attr">host</span>: config.<span class="property">sql</span>.<span class="property">host</span>,</span><br><span class="line">    <span class="comment">// 登录用户名</span></span><br><span class="line">    <span class="attr">user</span>: config.<span class="property">sql</span>.<span class="property">user</span>,</span><br><span class="line">    <span class="comment">// 登录密码</span></span><br><span class="line">    <span class="attr">password</span>: config.<span class="property">sql</span>.<span class="property">password</span>,</span><br><span class="line">    <span class="comment">// 指定数据库服务端口</span></span><br><span class="line">    <span class="attr">port</span>: config.<span class="property">sql</span>.<span class="property">port</span>,</span><br><span class="line">    <span class="comment">// 要读取的数据库</span></span><br><span class="line">    <span class="attr">database</span>: config.<span class="property">sql</span>.<span class="property">database</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 打卡功能</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">daka</span>(<span class="params">username, password</span>) &#123;</span><br><span class="line">    <span class="comment">// 异步执行</span></span><br><span class="line">    (<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">        <span class="comment">// 定义浏览器窗口</span></span><br><span class="line">        <span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.<span class="title function_">launch</span>(&#123;</span><br><span class="line">            <span class="comment">// 定义默认视图大小</span></span><br><span class="line">            <span class="attr">defaultViewport</span>: &#123;</span><br><span class="line">                <span class="attr">width</span>: <span class="number">600</span>,</span><br><span class="line">                <span class="attr">height</span>: <span class="number">2600</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// Linux下截图需要设置</span></span><br><span class="line">            <span class="attr">args</span>:[<span class="string">&#x27;--no-sandbox&#x27;</span>, <span class="string">&#x27;--disable-setuid-sandbox&#x27;</span>],</span><br><span class="line">            <span class="comment">// 无头模式，即 后台运行,不弹出浏览器</span></span><br><span class="line">            <span class="attr">headless</span>: <span class="literal">true</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">// 定义新页面</span></span><br><span class="line">        <span class="keyword">const</span> page = <span class="keyword">await</span> browser.<span class="title function_">newPage</span>();</span><br><span class="line">        <span class="comment">// </span></span><br><span class="line">        <span class="keyword">const</span> context = browser.<span class="title function_">defaultBrowserContext</span>();</span><br><span class="line">        <span class="comment">// 屏蔽定位</span></span><br><span class="line">        <span class="keyword">await</span> context.<span class="title function_">overridePermissions</span>(<span class="string">&#x27;https://myddc.usx.edu.cn/&#x27;</span>, [<span class="string">&#x27;geolocation&#x27;</span>]);</span><br><span class="line">        <span class="comment">// 虚拟定位</span></span><br><span class="line">        <span class="keyword">await</span> page.<span class="title function_">setGeolocation</span>(&#123;</span><br><span class="line">            <span class="comment">// 纬度</span></span><br><span class="line">            <span class="attr">latitude</span>: <span class="built_in">parseFloat</span>(config.<span class="property">map</span>.<span class="property">latitude</span>) ,</span><br><span class="line">            <span class="comment">// 经度</span></span><br><span class="line">            <span class="attr">longitude</span>: <span class="built_in">parseFloat</span>(config.<span class="property">map</span>.<span class="property">longitude</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// 跳转url</span></span><br><span class="line">        <span class="keyword">await</span> page.<span class="title function_">goto</span>(<span class="string">&#x27;https://ca.usx.edu.cn/cas/login?service=https%3A%2F%2Fmyddc.usx.edu.cn%2Fwebroot%2Fdecision%2Fview%2Fform%3Fop%3Dh5%26viewlet%3Dxxkj%252Fmobile%252Fbpa%252Fbpa.frm#/form&#x27;</span>);</span><br><span class="line">        <span class="comment">// 输入用户名和密码</span></span><br><span class="line">        <span class="keyword">await</span> page.<span class="title function_">type</span>(<span class="string">&quot;#username&quot;</span>, username, &#123;<span class="attr">delay</span>: <span class="number">100</span>&#125;);</span><br><span class="line">        <span class="keyword">await</span> page.<span class="title function_">type</span>(<span class="string">&quot;#password&quot;</span>, password, &#123;<span class="attr">delay</span>: <span class="number">100</span>&#125;);</span><br><span class="line">        <span class="comment">// 模拟键盘按回车键</span></span><br><span class="line">        <span class="keyword">await</span> page.<span class="property">keyboard</span>.<span class="title function_">press</span>(<span class="string">&#x27;Enter&#x27;</span>);</span><br><span class="line">        <span class="comment">// 等待页面跳转</span></span><br><span class="line">        <span class="keyword">await</span> <span class="title class_">Promise</span>.<span class="title function_">all</span>([page.<span class="title function_">waitForNavigation</span>()]);</span><br><span class="line">        <span class="comment">// 等待3000毫秒，即3秒</span></span><br><span class="line">        <span class="keyword">await</span> page.<span class="title function_">waitForTimeout</span>(<span class="number">3000</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 寻找已打卡的tag</span></span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">waitForXPath</span>(<span class="string">&quot;//div[contains(text(),&#x27;今日已打卡！&#x27;)]&quot;</span>, <span class="number">5000</span>);</span><br><span class="line">            <span class="comment">// let btn=(await page.$x(&quot;//div[contains(text(),&#x27;确定&#x27;)]&quot;))[0];</span></span><br><span class="line">            <span class="comment">// if(btn)btn.click();</span></span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">waitForTimeout</span>(<span class="number">3000</span>);</span><br><span class="line">            <span class="comment">// 截图</span></span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">screenshot</span>(&#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;./Screenshots/&#x27;</span>+username+<span class="string">&#x27;.png&#x27;</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">            <span class="comment">// 定位checkbox</span></span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">waitForXPath</span>(<span class="string">&quot;//div[text()=&#x27;同意签订承诺书&#x27;]/../div[1]&quot;</span>, <span class="number">5000</span>);</span><br><span class="line">            <span class="keyword">let</span> btn_prm = (<span class="keyword">await</span> page.$x(<span class="string">&quot;//div[text()=&#x27;同意签订承诺书&#x27;]/../div[1]&quot;</span>))[<span class="number">0</span>];</span><br><span class="line">            <span class="comment">// 点击定位到的checkbox</span></span><br><span class="line">            <span class="keyword">if</span> (btn_prm) btn_prm.<span class="title function_">click</span>();</span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">waitForTimeout</span>(<span class="number">3000</span>);</span><br><span class="line">            <span class="comment">// 等待Xpath元素出现</span></span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">waitForXPath</span>(<span class="string">&quot;//*[text()=&#x27;提交&#x27;]&quot;</span>, <span class="number">5000</span>);</span><br><span class="line">            <span class="comment">// 定位“提交”按钮</span></span><br><span class="line">            <span class="keyword">let</span> btn_sub = (<span class="keyword">await</span> page.$x(<span class="string">&quot;//*[text()=&#x27;提交&#x27;]&quot;</span>))[<span class="number">0</span>];</span><br><span class="line">            <span class="comment">// 点击</span></span><br><span class="line">            <span class="keyword">if</span> (btn_sub) btn_sub.<span class="title function_">click</span>();</span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">waitForTimeout</span>(<span class="number">3000</span>);</span><br><span class="line">            <span class="comment">// 截图</span></span><br><span class="line">            <span class="keyword">await</span> page.<span class="title function_">screenshot</span>(&#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&#x27;./Screenshots/&#x27;</span>+username+<span class="string">&#x27;.png&#x27;</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 延迟3秒</span></span><br><span class="line">        <span class="keyword">await</span> page.<span class="title function_">waitForTimeout</span>(<span class="number">3000</span>)</span><br><span class="line">        <span class="comment">// 关闭浏览器</span></span><br><span class="line">        <span class="keyword">await</span> browser.<span class="title function_">close</span>();</span><br><span class="line">    &#125;)();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接mysql</span></span><br><span class="line">conn.<span class="title function_">connect</span>();</span><br><span class="line"><span class="comment">// sql语句</span></span><br><span class="line"><span class="keyword">var</span> sql = <span class="string">&#x27;select * from user_info&#x27;</span>;</span><br><span class="line"><span class="comment">// 执行查询</span></span><br><span class="line">conn.<span class="title function_">query</span>(sql, <span class="keyword">function</span> (<span class="params">err, result</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;[SELECT ERROR] - &#x27;</span>, err.<span class="property">message</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 读取用户列表执行打卡</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> result) &#123;</span><br><span class="line">        <span class="title function_">daka</span>(result[i].<span class="property">username</span>,result[i].<span class="property">password</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 关闭连接</span></span><br><span class="line">conn.<span class="title function_">end</span>();</span><br></pre></td></tr></table></figure>
+
+<h4 id="autoemail-py"><a href="#autoemail-py" class="headerlink" title="autoemail.py"></a>autoemail.py</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入库</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.mime.base <span class="keyword">import</span> MIMEBase</span><br><span class="line"><span class="keyword">from</span> email <span class="keyword">import</span> encoders</span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.header <span class="keyword">import</span> Header  </span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEMultipart</span><br><span class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> parseaddr, formataddr</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> sqlalchemy <span class="keyword">as</span> sql</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取json配置文件</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./config.json&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)<span class="keyword">as</span> js:</span><br><span class="line">    config=json.load(js)</span><br><span class="line"><span class="comment"># email的服务器和服务端口号</span></span><br><span class="line">host = config[<span class="string">&#x27;email&#x27;</span>][<span class="string">&#x27;host&#x27;</span>]</span><br><span class="line">port = config[<span class="string">&#x27;email&#x27;</span>][<span class="string">&#x27;port&#x27;</span>]</span><br><span class="line"><span class="comment"># 采用SSL连接</span></span><br><span class="line">s = smtplib.SMTP_SSL(host)</span><br><span class="line"><span class="comment"># 连接email服务器</span></span><br><span class="line">s.connect(host, port)  </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_format_addr</span>(<span class="params">s</span>):</span><br><span class="line">    name, addr = parseaddr(s)</span><br><span class="line">    <span class="keyword">return</span> formataddr((Header(name, <span class="string">&#x27;utf-8&#x27;</span>).encode(), addr))</span><br><span class="line"><span class="comment"># 读取图片列表</span></span><br><span class="line">pngs = os.listdir(<span class="string">f&#x27;./Screenshots&#x27;</span>)</span><br><span class="line"><span class="comment"># 创建数据库连接配置</span></span><br><span class="line">engine = sql.create_engine(<span class="string">f&quot;mysql+pymysql://<span class="subst">&#123;config[<span class="string">&#x27;sql&#x27;</span>][<span class="string">&#x27;user&#x27;</span>]&#125;</span>:<span class="subst">&#123;config[<span class="string">&#x27;sql&#x27;</span>][<span class="string">&#x27;password&#x27;</span>]&#125;</span>@<span class="subst">&#123;config[<span class="string">&#x27;sql&#x27;</span>][<span class="string">&#x27;host&#x27;</span>]&#125;</span>:<span class="subst">&#123;config[<span class="string">&#x27;sql&#x27;</span>][<span class="string">&#x27;port&#x27;</span>]&#125;</span>/<span class="subst">&#123;config[<span class="string">&#x27;sql&#x27;</span>][<span class="string">&#x27;database&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># sql语句</span></span><br><span class="line">sql=<span class="string">&#x27;select * from user_info&#x27;</span></span><br><span class="line"><span class="comment"># 执行sql语句，返回dataframe格式数据</span></span><br><span class="line">df=pd.read_sql(sql,engine)</span><br><span class="line"><span class="comment"># 发送列表（dict），此时为空</span></span><br><span class="line">send_list_dict=&#123;&#125;</span><br><span class="line"><span class="comment"># 将数据塞到发送列表里</span></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> df.itertuples(index=<span class="literal">True</span>,name=<span class="string">&#x27;Pandas&#x27;</span>):</span><br><span class="line">    send_list_dict[<span class="built_in">getattr</span>(row,<span class="string">&#x27;username&#x27;</span>)]=<span class="built_in">getattr</span>(row,<span class="string">&#x27;email&#x27;</span>)</span><br><span class="line"><span class="comment"># 发送方email-address</span></span><br><span class="line">from_addr = config[<span class="string">&#x27;email&#x27;</span>][<span class="string">&#x27;from_addr&#x27;</span>]</span><br><span class="line"><span class="comment"># 发送方email-password</span></span><br><span class="line">password =config[<span class="string">&#x27;email&#x27;</span>][<span class="string">&#x27;from_pwd&#x27;</span>]</span><br><span class="line"><span class="comment"># 登录邮箱服务</span></span><br><span class="line">s.login(user=from_addr, password=password)</span><br><span class="line"><span class="comment"># 遍历图片（其实也是遍历用户，autodaka会为每个用户生成截图，因此不用担心遗漏的问题）</span></span><br><span class="line"><span class="keyword">for</span> png <span class="keyword">in</span> pngs:</span><br><span class="line">    msg = MIMEMultipart()</span><br><span class="line">    <span class="comment"># email内容，可以写h5</span></span><br><span class="line">    msg.attach(MIMEText(<span class="string">&#x27;&lt;html&gt;&lt;body style:&quot;margin:0 auto;&quot;&gt;&lt;h1&gt;结果截图：&lt;/h1&gt;&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;&lt;p&gt;&lt;img src=&quot;cid:0&quot;&gt;&lt;/p&gt;&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;&lt;/body&gt;&lt;/html&gt;&#x27;</span>, <span class="string">&#x27;html&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">    msg.attach(MIMEText(<span class="string">&#x27;打卡结果&#x27;</span>, <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">    <span class="comment"># 为email加一些参数</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;./Screenshots/<span class="subst">&#123;png&#125;</span>&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        mime = MIMEBase(<span class="string">&#x27;image&#x27;</span>, <span class="string">&#x27;png&#x27;</span>, filename=png)</span><br><span class="line">        mime.add_header(<span class="string">&#x27;Content-Disposition&#x27;</span>, <span class="string">&#x27;attachment&#x27;</span>, filename=png)</span><br><span class="line">        mime.add_header(<span class="string">&#x27;Content-ID&#x27;</span>, <span class="string">&#x27;&lt;0&gt;&#x27;</span>)</span><br><span class="line">        mime.add_header(<span class="string">&#x27;X-Attachment-Id&#x27;</span>,<span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">        mime.set_payload(f.read())</span><br><span class="line">        encoders.encode_base64(mime)</span><br><span class="line">        msg.attach(mime)</span><br><span class="line">    to_addr = send_list_dict[png.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>]]</span><br><span class="line">    msg[<span class="string">&#x27;From&#x27;</span>] = _format_addr(<span class="string">&#x27;打卡小助手 &lt;%s&gt;&#x27;</span> % from_addr)</span><br><span class="line">    msg[<span class="string">&#x27;To&#x27;</span>] = _format_addr(<span class="string">&#x27;管理员 &lt;%s&gt;&#x27;</span> % to_addr)</span><br><span class="line">    msg[<span class="string">&#x27;Subject&#x27;</span>] = Header(<span class="string">&#x27;今日打卡结果反馈：&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>).encode()</span><br><span class="line">    <span class="comment"># 发送邮件</span></span><br><span class="line">    s.sendmail(from_addr, [to_addr], msg.as_string())</span><br><span class="line"><span class="comment"># 退出email服务</span></span><br><span class="line">s.quit()</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/30/Python+Puppeteer%E5%AE%9E%E7%8E%B0%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/30/Python+Puppeteer%E5%AE%9E%E7%8E%B0%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-30 10:04:45" itemprop="dateCreated datePublished" datetime="2023-10-30T10:04:45+08:00">2023-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-18 00:23:21" itemprop="dateModified" datetime="2022-10-18T00:23:21+08:00">2022-10-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Python-Puppeteer实现企业微信自动打卡"><a href="#Python-Puppeteer实现企业微信自动打卡" class="headerlink" title="Python+Puppeteer实现企业微信自动打卡"></a>Python+Puppeteer实现企业微信自动打卡</h1><h4 id="软件简介："><a href="#软件简介：" class="headerlink" title="软件简介："></a>软件简介：</h4><p>​	<strong><a target="_blank" rel="noopener" href="https://pptr.dev/">Puppeteer</a></strong> 是一个控制 headless Chrome 的 Node.js API 。它是一个 Node.js 库，通过 <a target="_blank" rel="noopener" href="https://chromedevtools.github.io/devtools-protocol/">DevTools 协议</a>提供了一个高级的 API 来控制 <a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2017/04/headless-chrome">headless</a> Chrome。它还可以配置为使用完整的（非 headless）Chrome。</p>
+<p>在浏览器中手动完成的大多数事情都可以通过使用 Puppeteer 完成，下面是一些入门的例子：</p>
+<ul>
+<li>生成屏幕截图和 PDF 页面</li>
+<li>检索 SPA 并生成预渲染内容（即 “SSR”）</li>
+<li>从网站上爬取内容</li>
+<li>自动提交表单，UI 测试，键盘输入等</li>
+<li>创建一个最新的自动测试环境。使用最新的 JavaScript 和浏览器功能，在最新版本的 Chrome 中直接运行测试</li>
+<li>捕获网站的<a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference">时间线跟踪</a>，以帮助诊断性能问题</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/30/2022.11.6%E4%BD%8F%E9%99%A2%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/30/2022.11.6%E4%BD%8F%E9%99%A2%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-30 10:04:45" itemprop="dateCreated datePublished" datetime="2023-10-30T10:04:45+08:00">2023-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-11-06 21:05:43" itemprop="dateModified" datetime="2022-11-06T21:05:43+08:00">2022-11-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="2022-11-6"><a href="#2022-11-6" class="headerlink" title="2022.11.6"></a>2022.11.6</h1><p>今天是因肺炎住院的第3天了，天天打点滴，有袋老大的阿奇霉素可以整整滴6-8小时，甚至晚上12点还有青霉素；说起来有点莫名其妙，一切都要从周一说起&#x3D;。&#x3D;，周一云计算老师由于无法及时返校课全变成线上了，下午的实验课由于没有新任务，或者说有但没有布置下来，我直接就回宿舍去了，只记得当时感觉很累很困，回到宿舍秒睡2小时，醒来后感觉有点冷一量体温38摄氏度！！！，好久没有过这温度了，当时也以为单纯的发烧撑死了带点感冒，晚上借了4粒布洛芬，喝了一粒睡觉了，晚上疯狂出汗（此时我的认知仍是捂汗，现在想想真是难受又不讨好），第二天（周二）早晨感觉好多了，烧也退掉了，从早到晚，温度一直在逐步上升，很无语，到了晚上8点直接到了39摄氏度！！！！！这下我慌的一批（貌似下午吃了一粒布洛芬，但不知为何没退，可能刚好是退烧前的体温上升期？）到医务室没开门，只好给钢哥打电话，听完事情发展后，钢哥叫我去医务室，然而我早就在医务</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/20/%E3%80%8A%E4%BD%8E%E6%AC%B2%E6%9C%9B%E7%A4%BE%E4%BC%9A%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/20/%E3%80%8A%E4%BD%8E%E6%AC%B2%E6%9C%9B%E7%A4%BE%E4%BC%9A%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/" class="post-title-link" itemprop="url">《低欲望社会》读后感</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-04-20 09:49:02 / 修改时间：12:15:44" itemprop="dateCreated datePublished" datetime="2022-04-20T09:49:02+08:00">2022-04-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/" itemprop="url" rel="index"><span itemprop="name">读后感</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="《低欲望社会》读后感"><a href="#《低欲望社会》读后感" class="headerlink" title="《低欲望社会》读后感"></a>《低欲望社会》读后感</h2><p>现在“内卷”几乎出</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/" class="post-title-link" itemprop="url">记一次破解网课视频禁止拖动</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-29 17:40:34 / 修改时间：18:09:03" itemprop="dateCreated datePublished" datetime="2022-03-29T17:40:34+08:00">2022-03-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -210,15 +518,93 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="记一次破解网课视频禁止拖动"><a href="#记一次破解网课视频禁止拖动" class="headerlink" title="记一次破解网课视频禁止拖动"></a>记一次破解网课视频禁止拖动</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>java-web主要靠网课，但偏偏网课被老师设置了不可拖动，有时一个愣神就错过了知识点，但又不想之后会过来再看一遍，于是在昨天下午我就开始琢磨如何破除这道限制，搞了整整4小时，虽然解决方法很简单，但却相当有趣，故而记作随笔以留念。</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>诺，就是这，无法拖动！！！，虽然理解老师的本意，不希望我们囫囵吞枣，但。。这是难不倒我滴ヾ(•ω•&#96;)o</p>
-<p><img src="/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png"></p>
-<h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>按F12打开控制台的抓包功能，经过分析，只有4~5个js，哼，只有这几个小不点儿怎么可能难倒我，我就看了整整1小时，然后只知道找错了，但后来受到一位大佬的启发。</p>
-<p>我们不妨从原理切入，首先可以肯定，禁止拖动是在js的基础上实现的，视频标签是video，自带各种功能，而图中的显然不是自带的（当然不是看出来的，而是当时用“document.querySelector(‘video’).controls”查了下，结果返回false），于是就“document.querySelector(‘video’).controls&#x3D;true”，结果奇迹出现了，</p>
-<p><img src="/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E5%A5%87%E8%BF%B9.png"></p>
-<p>试了试，果然可以拖动，之后的工作就简单了，去除原有的拖动条，显示自带的拖动条，于是到ChromeStore下载了Reres插件，该插件可以拦截并替换js，于是我将原请求的一个js文件下载到本地，加上自己的js代码，就大功告成了。</p>
-<p><img src="/2023/10/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/%E4%B8%87%E6%81%B6.png"></p>
-<p>其实在控制台直接输代码就行，但每次都输有点麻烦。</p>
-<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><p>这次的探索加深了我对网页的理解，js层面上，貌似篡改要容易得多，同时也意外学会了刷网课的方法（当然是开玩笑滴啦，不会真有人以为我要刷网课吧），原来控制台的妙用还挺多&#x3D;。&#x3D;</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3%E7%BD%91%E8%AF%BE%E8%A7%86%E9%A2%91%E7%A6%81%E6%AD%A2%E6%8B%96%E5%8A%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/26/Servlet%E4%BD%BF%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5mysql%E6%8A%A5%E9%94%99-ClassNOTFoundException/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/26/Servlet%E4%BD%BF%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5mysql%E6%8A%A5%E9%94%99-ClassNOTFoundException/" class="post-title-link" itemprop="url">Servlet使用JDBC连接mysql报错'ClassNOTFoundException'</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-26 13:58:19 / 修改时间：18:50:07" itemprop="dateCreated datePublished" datetime="2022-03-26T13:58:19+08:00">2022-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Servlet使用JDBC连接mysql报-错“ClassNOTFoundException”"><a href="#Servlet使用JDBC连接mysql报-错“ClassNOTFoundException”" class="headerlink" title="Servlet使用JDBC连接mysql报 错“ClassNOTFoundException”"></a>Servlet使用JDBC连接mysql报 错“ClassNOTFoundException”</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>今天写java-web实验时servlet连接数据库老是出问题，找了很多信息结果真是让我进一步感受到国内论坛氛围真是“糟糕”的一批，君不见排前几的点开，虽然社区不一样但内容一模一样，不要说你内容，甚至连排版都一样，真是绝了~</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>把jar包放到tomcat的lib里。</p>
 
       
     </div>
@@ -237,6 +623,383 @@
 
 
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/" class="post-title-link" itemprop="url">vscode配置c/c++环境</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-25 09:34:33" itemprop="dateCreated datePublished" datetime="2022-03-25T09:34:33+08:00">2022-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-26 14:00:25" itemprop="dateModified" datetime="2022-03-26T14:00:25+08:00">2022-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="VSCode配置c-c-环境教程"><a href="#VSCode配置c-c-环境教程" class="headerlink" title="VSCode配置c&#x2F;c++环境教程"></a>VSCode配置c&#x2F;c++环境教程</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>尽管dev已有人维护到6.3版本，然而他的代码补全以及提示真的一言难尽，VS各项功能都挺不错，但对于刷题以及学习算法来说有些臃肿，这个时候VSCode显然具备两者的优点，小巧且功能强大，本以为配置个环境会相当简单，但昨天搞了一晚上才解决，解决后仍然觉得不难（无非是填写两个配置文件），但过程是真滴痛苦，知道配置这俩文件和配置正确是两码事。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">配置PicGo+Gitee图床教程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-24 17:54:21" itemprop="dateCreated datePublished" datetime="2022-03-24T17:54:21+08:00">2022-03-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-26 13:59:57" itemprop="dateModified" datetime="2022-03-26T13:59:57+08:00">2022-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="配置PicGo-Gitee图床教程-Gitee图床已失效"><a href="#配置PicGo-Gitee图床教程-Gitee图床已失效" class="headerlink" title="配置PicGo+Gitee图床教程(Gitee图床已失效)"></a><del>配置PicGo+Gitee图床教程(Gitee图床已失效)</del></h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>下午下课后在教室正漫无目的翻看大佬的帖子，不太理解“image bed”的含义，问了下度娘才恍然大悟，说白了就是专门存储图片的服务，又看到很多大佬写blog都配下图床，想想刚配好的blog，因为放在github的缘故，延迟感人，图片加载速度真是一言难尽。。于是利用Gitee也配置了自己的图床，并且已经完成图片迁移。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/%E8%8C%AB%E8%8C%AB%E5%89%8D%E8%B7%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/22/%E8%8C%AB%E8%8C%AB%E5%89%8D%E8%B7%AF/" class="post-title-link" itemprop="url">茫茫前路</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-22 21:21:16" itemprop="dateCreated datePublished" datetime="2022-03-22T21:21:16+08:00">2022-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-26 14:00:11" itemprop="dateModified" datetime="2022-03-26T14:00:11+08:00">2022-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="茫茫前路"><a href="#茫茫前路" class="headerlink" title="茫茫前路"></a>茫茫前路</h2><p>​</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/22/%E8%8C%AB%E8%8C%AB%E5%89%8D%E8%B7%AF/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/22/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">插入排序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-22 12:47:43" itemprop="dateCreated datePublished" datetime="2022-03-22T12:47:43+08:00">2022-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-25 20:30:26" itemprop="dateModified" datetime="2022-03-25T20:30:26+08:00">2022-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">排序算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p><img src="%E9%97%AE%E9%A2%98.png"></p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/22/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>
