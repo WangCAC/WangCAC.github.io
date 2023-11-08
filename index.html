@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,6 +146,108 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2023/11/08/Operating-System%E7%B3%BB%E5%88%97-%E8%99%9A%E6%8B%9F%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WangCAC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WangCAC的博客">
+      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | WangCAC的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/08/Operating-System%E7%B3%BB%E5%88%97-%E8%99%9A%E6%8B%9F%E5%8C%96/" class="post-title-link" itemprop="url">Operating System系列-虚拟化</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-08 19:16:59 / 修改时间：21:09:41" itemprop="dateCreated datePublished" datetime="2023-11-08T19:16:59+08:00">2023-11-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Operating-System系列-虚拟化"><a href="#Operating-System系列-虚拟化" class="headerlink" title="Operating System系列-虚拟化"></a>Operating System系列-虚拟化</h1><h2 id="什么是虚拟化？"><a href="#什么是虚拟化？" class="headerlink" title="什么是虚拟化？"></a>什么是虚拟化？</h2><h2 id="第4章-抽象：进程"><a href="#第4章-抽象：进程" class="headerlink" title="第4章 抽象：进程"></a>第4章 抽象：进程</h2><p>从下面代码中可以看到，操作系统追踪进程的一些重要信息。对于停止的进程，寄存器上下文将保存其寄存器的内容。当一个进程停止时，它的寄存器将被保存到这个内存位置。通过恢复这些寄存器（将它们的值放回实际的物理寄存器中），操作系统可以恢复运行该进程。我们将在后面的章节中更多地了解这种技术，它被称为上下文切换（context switch）。 </p>
+<p>注：有时候人们会将存储关于进程的信息的个体结构称为进程控制块（ Process Control Block， PCB）， </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面的是【xv6 的 proc 结构】，</span></span><br><span class="line"><span class="comment">// the registers xv6 will save and restore 寄存器xv6将保存和恢复</span></span><br><span class="line"><span class="comment">// to stop and subsequently restart a process 停止并随后启动进程</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">context</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> eip;</span><br><span class="line">    <span class="type">int</span> esp;</span><br><span class="line">    <span class="type">int</span> ebx;</span><br><span class="line">    <span class="type">int</span> ecx;</span><br><span class="line">    <span class="type">int</span> edx;</span><br><span class="line">    <span class="type">int</span> esi;</span><br><span class="line">    <span class="type">int</span> edi;</span><br><span class="line">    <span class="type">int</span> ebp;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// the different states a process can be in 进程可能处于不同状态</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">proc_state</span></span><br><span class="line">&#123;</span><br><span class="line">    UNUSED, 	<span class="comment">//</span></span><br><span class="line">    EMBRYO,		<span class="comment">//</span></span><br><span class="line">    SLEEPING, 	<span class="comment">//休眠</span></span><br><span class="line">    RUNNABLE, 	<span class="comment">//就绪</span></span><br><span class="line">    RUNNING, 	<span class="comment">//运行</span></span><br><span class="line">    ZOMBIE 		<span class="comment">//僵尸，已退出但尚未被清理</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// the information xv6 tracks about each process xv6跟踪每个进程的有关信息</span></span><br><span class="line"><span class="comment">// including its register context and state 包括其寄存器上下文和状态</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">proc</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *mem;    <span class="comment">// Start of process memory 进程内存的开始</span></span><br><span class="line">    uint sz;      <span class="comment">// Size of process memory 进程内存的大小</span></span><br><span class="line">    <span class="type">char</span> *kstack; <span class="comment">// Bottom of kernel stack 进程堆栈底部</span></span><br><span class="line">    <span class="comment">// for this process</span></span><br><span class="line">    <span class="keyword">enum</span> <span class="title class_">proc_state</span> state;      <span class="comment">// Process state 进程状态</span></span><br><span class="line">    <span class="type">int</span> pid;                    <span class="comment">// Process ID 进程ID</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">proc</span> *parent;        <span class="comment">// Parent process 父进程</span></span><br><span class="line">    <span class="type">void</span> *chan;                 <span class="comment">// If non-zero, sleeping on chan 如果非零，在chan上休眠？</span></span><br><span class="line">    <span class="type">int</span> killed;                 <span class="comment">// If non-zero, have been killed 如果非零，则已被杀死</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">file</span> *ofile[NOFILE]; <span class="comment">// Open files 空文件|打开文件 ？？？</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">inode</span> *cwd;          <span class="comment">// Current directory 当前目录</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">context</span> context;     <span class="comment">// Switch here to run process 切换到此运行进程</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">trapframe</span> *tf;       <span class="comment">// Trap frame for the 陷阱框架</span></span><br><span class="line">    <span class="comment">// current interrupt 当前中断</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><h4 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h4><blockquote>
+<p>用以下标志运行程序： .&#x2F;process-run.py -l 5:100,5:100。 CPU 利用率（CPU 使用时间的百分比）应该是多少？为什么你知道这一点？利用 -c 标记查看你的答案是否正确。  </p>
+</blockquote>
+<p>解：无脑 100%</p>
+<p>𝘼𝙣𝙨𝙬𝙚𝙧:<br><img src="Operating-System%E7%B3%BB%E5%88%97-%E8%99%9A%E6%8B%9F%E5%8C%96%5Cq4-1.png"></p>
+<h4 id="问题2："><a href="#问题2：" class="headerlink" title="问题2："></a>问题2：</h4><blockquote>
+<p>现在用这些标志运行： .&#x2F;process-run.py -l 4:100,1:0。这些标志指定了一个包含 4 条指令的进程（都要使用 CPU），并且只是简单地发出 I&#x2F;O 并等待它完成。完成这两个进程需要多长时间？利用-c 检查你的答案是否正确。  </p>
+</blockquote>
+<p>解：无限长，因为第二个进程使用CPU的机会为<strong>0</strong></p>
+<p>Answer:</p>
+<p><img src="Operating-System%E7%B3%BB%E5%88%97-%E8%99%9A%E6%8B%9F%E5%8C%96%5Cq4-2.png"></p>
+<h4 id="问题3"><a href="#问题3" class="headerlink" title="问题3:"></a>问题3:</h4><blockquote>
+<p>现在交换进程的顺序： .&#x2F;process-run.py -l 1:0,4:100。现在发生了什么？交换顺序是否重要？为什么？同样，用-c 看看你的答案是否正确  </p>
+</blockquote>
+<h4 id="问题4："><a href="#问题4：" class="headerlink" title="问题4："></a>问题4：</h4><blockquote>
+<p>现在探索另一些标志。一个重要的标志是-S，它决定了当进程发出 I&#x2F;O 时系统如何反应。将标志设置为 SWITCH_ON_END，在进程进行 I&#x2F;O 操作时，系统将不会切换到另一个进程，而是等待进程完成。当你运行以下两个进程时，会发生什么情况？一个执行 I&#x2F;O，另一个执行 CPU 工作。（-l 1:0,4:100 -c -S SWITCH_ON_END）  </p>
+</blockquote>
+<h4 id="问题5："><a href="#问题5：" class="headerlink" title="问题5："></a>问题5：</h4><blockquote>
+<p>现在，运行相同的进程，但切换行为设置，在等待 I&#x2F;O 时切换到另一个进程（-l 1:0,4:100-c -S SWITCH_ON_IO）。现在会发生什么？利用-c 来确认你的答案是否正确。  </p>
+</blockquote>
+<h4 id="问题6："><a href="#问题6：" class="headerlink" title="问题6："></a>问题6：</h4><blockquote>
+<p>另一个重要的行为是 I&#x2F;O 完成时要做什么。利用-I IO_RUN_LATER，当 I&#x2F;O 完成时，发出它的进程不一定马上运行。相反，当时运行的进程一直运行。当你运行这个进程组合时会发生什么？（.&#x2F;process-run.py -l 3:0,5:100,5:100,5:100 -S SWITCH_ON_IO -I IO_RUN_LATER -c -p）系统资源是否被有效利用？  </p>
+</blockquote>
+<h4 id="问题7："><a href="#问题7：" class="headerlink" title="问题7："></a>问题7：</h4><blockquote>
+<p>现在运行相同的进程，但使用-I IO_RUN_IMMEDIATE 设置，该设置立即运行发出I&#x2F;O 的进程。这种行为有何不同？为什么运行一个刚刚完成 I&#x2F;O 的进程会是一个好主意？  </p>
+</blockquote>
+<h4 id="问题8："><a href="#问题8：" class="headerlink" title="问题8："></a>问题8：</h4><blockquote>
+<p>现在运行一些随机生成的进程，例如-s 1 -l 3:50,3:50, -s 2 -l 3:50,3:50, -s 3 -l 3:50,3:50。看看你是否能预测追踪记录会如何变化？当你使用-I IO_RUN_IMMEDIATE 与-I IO_RUN_LATER 时会发生什么？当你使用-S SWITCH_ON_IO 与-S  SWITCH_ON_END 时会发生什么？  </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -480,98 +582,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WangCAC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WangCAC的博客">
-      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WangCAC的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/" class="post-title-link" itemprop="url">vscode配置c/c++环境</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-25 09:34:33" itemprop="dateCreated datePublished" datetime="2022-03-25T09:34:33+08:00">2022-03-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-26 14:00:25" itemprop="dateModified" datetime="2022-03-26T14:00:25+08:00">2022-03-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="VSCode配置c-c-环境教程"><a href="#VSCode配置c-c-环境教程" class="headerlink" title="VSCode配置c&#x2F;c++环境教程"></a>VSCode配置c&#x2F;c++环境教程</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>尽管dev已有人维护到6.3版本，然而他的代码补全以及提示真的一言难尽，VS各项功能都挺不错，但对于刷题以及学习算法来说有些臃肿，这个时候VSCode显然具备两者的优点，小巧且功能强大，本以为配置个环境会相当简单，但昨天搞了一晚上才解决，解决后仍然觉得不难（无非是填写两个配置文件），但过程是真滴痛苦，知道配置这俩文件和配置正确是两码事。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -590,7 +600,7 @@
     </span>
     <span class="author" itemprop="copyrightHolder">WangCAC</span>
   </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">
   </div>
 
     </div>
