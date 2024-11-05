@@ -1,661 +1,204 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"wangcac.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>WangCAC的博客</title><meta name="author" content="WangCAC"><meta name="copyright" content="WangCAC"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WangCAC的博客">
 <meta property="og:url" content="https://wangcac.github.io/page/3/index.html">
 <meta property="og:site_name" content="WangCAC的博客">
 <meta property="og:description" content="俺要成为大佬呀( •̀ ω •́ )✧">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wangcac.github.io/img/avatar.gif">
 <meta property="article:author" content="WangCAC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wangcac.github.io/img/avatar.gif"><link rel="shortcut icon" href="/img/favicon-32x32-next.png"><link rel="canonical" href="https://wangcac.github.io/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-
-<link rel="canonical" href="https://wangcac.github.io/page/3/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>WangCAC的博客</title>
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">WangCAC的博客</h1>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-  </ul>
-</nav>
-
-
-
-
-</header>
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="WangCAC"
-      src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">WangCAC</p>
-  <div class="site-description" itemprop="description">俺要成为大佬呀( •̀ ω •́ )✧</div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">16</span>
-          <span class="site-state-item-name">日志</span>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'WangCAC的博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-11-05 11:52:48',
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">WangCAC的博客</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">WangCAC的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/26/Servlet%E4%BD%BF%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5mysql%E6%8A%A5%E9%94%99-ClassNOTFoundException/" title="Servlet使用JDBC连接mysql报错'ClassNOTFoundException'">Servlet使用JDBC连接mysql报错'ClassNOTFoundException'</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-26T05:58:19.000Z" title="发表于 2022-03-26 13:58:19">2022-03-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">记Servlet使用JDBC连接mysql报错“ClassNOTFoundException”引入今天写java-web实验时servlet连接数据库老是出问题，找了很多信息结果真是让我进一步感受到国内论坛氛围真是“糟糕”的一批，君不见排前几的点开，虽然社区不一样但内容一模一样，不要说你内容，甚至连排版都一样，真是绝了~ 解决方法把jar包放到tomcat的lib里。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83(%E6%97%A7)/" title="vscode配置c/c++环境(旧)">vscode配置c/c++环境(旧)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-25T01:34:33.000Z" title="发表于 2022-03-25 09:34:33">2022-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">VSCode配置c&#x2F;c++环境教程(旧)引言尽管dev已有人维护到6.3版本，然而他的代码补全以及提示真的一言难尽，VS各项功能都挺不错，但对于刷题以及学习算法来说有些臃肿，这个时候VSCode显然具备两者的优点，小巧且功能强大，本以为配置个环境会相当简单，但昨天搞了一晚上才解决，解决后仍然觉得不难（无非是填写两个配置文件），但过程是真滴痛苦，知道配置这俩文件和配置正确是两码事。   教程1.首先下载MinGW，然后解压到一个文件夹里，打开解压到的目录，进入bin目录 复制路径 2.添加到环境变量1.打开“编辑系统环境变量面板” 2.按图配置，然后都点确定 3.win+R输入cmd，回车，输入gcc，正常结果如下（说明环境配置成功） 3.配置VSCode1.进入vscode，进入一个文件夹，写一个hello.cpp 12345#include&lt;cstdio&gt;int main()&#123;    printf(&quot;Hello World!&quot;);    return...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/" title="配置PicGo+Gitee图床教程">配置PicGo+Gitee图床教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-24T09:54:21.000Z" title="发表于 2022-03-24 17:54:21">2022-03-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">配置PicGo+Gitee图床教程(Gitee图床已失效)引入下午下课后在教室正漫无目的翻看大佬的帖子，不太理解“image bed”的含义，问了下度娘才恍然大悟，说白了就是专门存储图片的服务，又看到很多大佬写blog都配下图床，想想刚配好的blog，因为放在github的缘故，延迟感人，图片加载速度真是一言难尽。。于是利用Gitee也配置了自己的图床，并且已经完成图片迁移。    教程（注：顺序无所谓）1.首先登录Gitee，新建一个存储image的库。 2.点击个人设置，新建私人令牌，把token存到电脑上 3.下载并安装PicGo，安装好打开是这样滴 4.下载如图插件（新版本不自带Gitee支持，需要下载插件） 5.打开图床设置，点击Gitee 1.repo设置复制仓库链接上面划红线部分的，及”用户名+仓库名”  2.branch设置直接填 master 3.token设置就是你复制的私人密钥的token 4.path设置一般填 img...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/22/%E8%8C%AB%E8%8C%AB%E5%89%8D%E8%B7%AF/" title="茫茫前路">茫茫前路</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-22T13:21:16.000Z" title="发表于 2022-03-22 21:21:16">2022-03-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">茫茫前路… </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/22/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" title="插入排序">插入排序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-22T04:47:43.000Z" title="发表于 2022-03-22 12:47:43">2022-03-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></span></div><div class="content">插入排序问题     特点对于少量元素的排序，它是一个有效的算法。 理解我觉得&lt;&lt;算法导论&gt;&gt;中讲的通俗易懂，引用至此： 插入排序的工作方式像许多人排序一手扑克牌。 开始时，我们的左手为空并且桌子上放着我们还没摸的牌（他们都朝下放置在桌面上）。然后我们每次从桌子上拿走一张牌并将它插入到左手中正确的位置（想想你打扑克牌的场景，是不是每摸一张就排下序&#x3D;。&#x3D;）。 为了找到一张牌的正确位置，我们从右到左将它于一在手中的每张牌进行比较。因此拿在左手上的牌总是排序好的。  代码 首先输入n个数字 123456789101112131415161718int main()&#123;	int n;	while(~scanf(&quot;%d&quot;,&amp;n))&#123;		int *arr=new int[n];  //用指针开了动态数组，其他方法也可（毕竟这种容易出错）        		for(int i=0;i&lt;n;i++)			scanf(&quot;%d&quot;,&amp;arr[i]); //输入n个数	     ...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">WangCAC</div><div class="author-info-description">俺要成为大佬呀( •̀ ω •́ )✧</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/15/6%E5%A4%A7%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/" title="6大组件概述">6大组件概述</a><time datetime="2024-10-15T10:38:11.000Z" title="发表于 2024-10-15 18:38:11">2024-10-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/21/DoQuick%E4%BB%8B%E7%BB%8D/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/" title="无标题">无标题</a><time datetime="2024-03-21T13:52:44.382Z" title="发表于 2024-03-21 21:52:44">2024-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="飞机大战项目介绍">飞机大战项目介绍</a><time datetime="2024-03-13T06:49:43.000Z" title="发表于 2024-03-13 14:49:43">2024-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/%E8%B4%AA%E5%90%83%E8%9B%87%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="贪吃蛇项目介绍">贪吃蛇项目介绍</a><time datetime="2024-03-13T06:49:17.000Z" title="发表于 2024-03-13 14:49:17">2024-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/DoQuick%E4%BB%8B%E7%BB%8D/" title="DoQuick介绍">DoQuick介绍</a><time datetime="2024-03-13T06:48:40.000Z" title="发表于 2024-03-13 14:48:40">2024-03-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Algorithm/"><span class="card-category-list-name">Algorithm</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Algorithm/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">排序算法</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Minecraft/"><span class="card-category-list-name">Minecraft</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Operating-System%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">Operating-System系列学习</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Unity-UGUI/"><span class="card-category-list-name">Unity-UGUI</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"><span class="card-category-list-name">读后感</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">随笔</span><span class="card-category-list-count">6</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 1.1em; color: #999">随笔</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/10/">
+          <span class="card-archive-list-date">十月 2024</span>
+          <span class="card-archive-list-count">1</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">7</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-        </div>
-      </div>
-    </div>
-
+      </li>
     
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner index posts-expand">
-
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/03/">
+          <span class="card-archive-list-date">三月 2024</span>
+          <span class="card-archive-list-count">4</span>
+        </a>
+      </li>
     
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2022/03/26/Servlet%E4%BD%BF%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5mysql%E6%8A%A5%E9%94%99-ClassNOTFoundException/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WangCAC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WangCAC的博客">
-      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WangCAC的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/26/Servlet%E4%BD%BF%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5mysql%E6%8A%A5%E9%94%99-ClassNOTFoundException/" class="post-title-link" itemprop="url">Servlet使用JDBC连接mysql报错'ClassNOTFoundException'</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-26 13:58:19" itemprop="dateCreated datePublished" datetime="2022-03-26T13:58:19+08:00">2022-03-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-30 10:23:43" itemprop="dateModified" datetime="2023-10-30T10:23:43+08:00">2023-10-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/11/">
+          <span class="card-archive-list-date">十一月 2023</span>
+          <span class="card-archive-list-count">2</span>
+        </a>
+      </li>
     
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/10/">
+          <span class="card-archive-list-date">十月 2023</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
     
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2022/04/">
+          <span class="card-archive-list-date">四月 2022</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
     
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="记Servlet使用JDBC连接mysql报错“ClassNOTFoundException”"><a href="#记Servlet使用JDBC连接mysql报错“ClassNOTFoundException”" class="headerlink" title="记Servlet使用JDBC连接mysql报错“ClassNOTFoundException”"></a>记Servlet使用JDBC连接mysql报错“ClassNOTFoundException”</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>今天写java-web实验时servlet连接数据库老是出问题，找了很多信息结果真是让我进一步感受到国内论坛氛围真是“糟糕”的一批，君不见排前几的点开，虽然社区不一样但内容一模一样，不要说你内容，甚至连排版都一样，真是绝了~</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>把jar包放到tomcat的lib里。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83(%E6%97%A7)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WangCAC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WangCAC的博客">
-      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WangCAC的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83(%E6%97%A7)/" class="post-title-link" itemprop="url">vscode配置c/c++环境(旧)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-25 09:34:33" itemprop="dateCreated datePublished" datetime="2022-03-25T09:34:33+08:00">2022-03-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-09 13:00:34" itemprop="dateModified" datetime="2023-11-09T13:00:34+08:00">2023-11-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="VSCode配置c-c-环境教程-旧"><a href="#VSCode配置c-c-环境教程-旧" class="headerlink" title="VSCode配置c&#x2F;c++环境教程(旧)"></a><del>VSCode配置c&#x2F;c++环境教程(旧)</del></h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>尽管dev已有人维护到6.3版本，然而他的代码补全以及提示真的一言难尽，VS各项功能都挺不错，但对于刷题以及学习算法来说有些臃肿，这个时候VSCode显然具备两者的优点，小巧且功能强大，本以为配置个环境会相当简单，但昨天搞了一晚上才解决，解决后仍然觉得不难（无非是填写两个配置文件），但过程是真滴痛苦，知道配置这俩文件和配置正确是两码事。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/25/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83(%E6%97%A7)/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WangCAC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WangCAC的博客">
-      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WangCAC的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">配置PicGo+Gitee图床教程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-24 17:54:21" itemprop="dateCreated datePublished" datetime="2022-03-24T17:54:21+08:00">2022-03-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-26 13:59:57" itemprop="dateModified" datetime="2022-03-26T13:59:57+08:00">2022-03-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="配置PicGo-Gitee图床教程-Gitee图床已失效"><a href="#配置PicGo-Gitee图床教程-Gitee图床已失效" class="headerlink" title="配置PicGo+Gitee图床教程(Gitee图床已失效)"></a><del>配置PicGo+Gitee图床教程(Gitee图床已失效)</del></h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>下午下课后在教室正漫无目的翻看大佬的帖子，不太理解“image bed”的含义，问了下度娘才恍然大悟，说白了就是专门存储图片的服务，又看到很多大佬写blog都配下图床，想想刚配好的blog，因为放在github的缘故，延迟感人，图片加载速度真是一言难尽。。于是利用Gitee也配置了自己的图床，并且已经完成图片迁移。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/24/%E9%85%8D%E7%BD%AEPicGo-Gitee%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2022/03/22/%E8%8C%AB%E8%8C%AB%E5%89%8D%E8%B7%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WangCAC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WangCAC的博客">
-      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WangCAC的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/22/%E8%8C%AB%E8%8C%AB%E5%89%8D%E8%B7%AF/" class="post-title-link" itemprop="url">茫茫前路</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-22 21:21:16" itemprop="dateCreated datePublished" datetime="2022-03-22T21:21:16+08:00">2022-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-13 14:43:19" itemprop="dateModified" datetime="2024-03-13T14:43:19+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="茫茫前路"><a href="#茫茫前路" class="headerlink" title="茫茫前路"></a>茫茫前路</h2><p>…</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wangcac.github.io/2022/03/22/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WangCAC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WangCAC的博客">
-      <meta itemprop="description" content="俺要成为大佬呀( •̀ ω •́ )✧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | WangCAC的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/22/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">插入排序</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-22 12:47:43" itemprop="dateCreated datePublished" datetime="2022-03-22T12:47:43+08:00">2022-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-25 20:30:26" itemprop="dateModified" datetime="2022-03-25T20:30:26+08:00">2022-03-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Algorithm/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">排序算法</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p><img src="%E9%97%AE%E9%A2%98.png"></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/22/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2024</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">WangCAC</span>
-  </div>
-  <div class="powered-by">
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-</body>
-</html>
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2022/03/">
+          <span class="card-archive-list-date">三月 2022</span>
+          <span class="card-archive-list-count">7</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">16</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-05T03:52:48.215Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/footer.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By WangCAC</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
