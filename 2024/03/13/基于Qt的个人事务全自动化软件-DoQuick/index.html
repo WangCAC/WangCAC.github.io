@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于Qt的个人事务全自动化软件-DoQuick | WangCAC的博客</title><meta name="author" content="WangCAC"><meta name="copyright" content="WangCAC"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基于Qt的个人事务全自动化软件-DoQuick开发背景 作为班级团支书，班级里经常有一些诸如统计Excel表格信息、统计并且催促同学打卡等的事务，程序固定且繁琐，遂有了开发一款处理自己日常事务软件的想法，该软件应运而生。 至于为什么起名叫DoQuick，顾名思义该软件就是为了帮助我更快的完成那些程序固定繁琐的任务，可以说是为了提高效率，因此DoQuick（做的更快）这个名字非常合适。  开发环境">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于Qt的个人事务全自动化软件-DoQuick | WangCAC的博客</title><meta name="author" content="WangCAC"><meta name="copyright" content="WangCAC"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基于Qt的个人事务全自动化软件-DoQuick开发背景作为班级团支书，班级里经常有一些表格数据收集、统计、分析的事物，比如每周都有“青年大学习”视频学习，我需要收集同学们的完成情况，并且统计、分析，及时提醒未完成的同学，最后还要做出报表反馈给老师。程序固定且繁琐，遂有了开发一款处理自己日常事务软件的想法，该软件应运而生。   至于为什么起名叫DoQuick，顾名思义该软件就是为了帮助我更快的完成那">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Qt的个人事务全自动化软件-DoQuick">
 <meta property="og:url" content="https://wangcac.github.io/2024/03/13/%E5%9F%BA%E4%BA%8EQt%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BA%8B%E5%8A%A1%E5%85%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BD%AF%E4%BB%B6-DoQuick/index.html">
 <meta property="og:site_name" content="WangCAC的博客">
-<meta property="og:description" content="基于Qt的个人事务全自动化软件-DoQuick开发背景 作为班级团支书，班级里经常有一些诸如统计Excel表格信息、统计并且催促同学打卡等的事务，程序固定且繁琐，遂有了开发一款处理自己日常事务软件的想法，该软件应运而生。 至于为什么起名叫DoQuick，顾名思义该软件就是为了帮助我更快的完成那些程序固定繁琐的任务，可以说是为了提高效率，因此DoQuick（做的更快）这个名字非常合适。  开发环境">
+<meta property="og:description" content="基于Qt的个人事务全自动化软件-DoQuick开发背景作为班级团支书，班级里经常有一些表格数据收集、统计、分析的事物，比如每周都有“青年大学习”视频学习，我需要收集同学们的完成情况，并且统计、分析，及时提醒未完成的同学，最后还要做出报表反馈给老师。程序固定且繁琐，遂有了开发一款处理自己日常事务软件的想法，该软件应运而生。   至于为什么起名叫DoQuick，顾名思义该软件就是为了帮助我更快的完成那">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wangcac.github.io/img/avatar.gif">
 <meta property="article:published_time" content="2024-03-13T06:48:40.000Z">
-<meta property="article:modified_time" content="2025-06-25T12:33:05.231Z">
+<meta property="article:modified_time" content="2026-08-24T05:49:57.109Z">
 <meta property="article:author" content="WangCAC">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wangcac.github.io/img/avatar.gif"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wangcac.github.io/2024/03/13/%E5%9F%BA%E4%BA%8EQt%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BA%8B%E5%8A%A1%E5%85%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BD%AF%E4%BB%B6-DoQuick/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
@@ -152,35 +152,47 @@ btf.addGlobalFn('pjaxComplete', () => {
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2025-06-25 20:33:05',
+  postUpdate: '2026-08-24 13:49:57',
   isShuoshuo: false
 }</script><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" id="hexo-admonition-icon-injected">
-  </head><body><div id="web_bg" style="background-image: url(/img/background.png);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/top.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">WangCAC的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">基于Qt的个人事务全自动化软件-DoQuick</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">基于Qt的个人事务全自动化软件-DoQuick</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-13T06:48:40.000Z" title="发表于 2024-03-13 14:48:40">2024-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-06-25T12:33:05.231Z" title="更新于 2025-06-25 20:33:05">2025-06-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/">个人项目</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="基于Qt的个人事务全自动化软件-DoQuick"><a href="#基于Qt的个人事务全自动化软件-DoQuick" class="headerlink" title="基于Qt的个人事务全自动化软件-DoQuick"></a>基于Qt的个人事务全自动化软件-DoQuick</h1><h2 id="开发背景"><a href="#开发背景" class="headerlink" title="开发背景"></a>开发背景</h2><blockquote>
-<p>作为班级团支书，班级里经常有一些诸如统计Excel表格信息、统计并且催促同学打卡等的事务，程序固定且繁琐，遂有了开发一款处理自己日常事务软件的想法，该软件应运而生。</p>
-<p>至于为什么起名叫DoQuick，顾名思义该软件就是为了帮助我更快的完成那些程序固定繁琐的任务，可以说是为了提高效率，因此DoQuick（做的更快）这个名字非常合适。</p>
-</blockquote>
+  </head><body><div id="web_bg" style="background-image: url(/img/background.png);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/top.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">WangCAC的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">基于Qt的个人事务全自动化软件-DoQuick</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">基于Qt的个人事务全自动化软件-DoQuick</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-13T06:48:40.000Z" title="发表于 2024-03-13 14:48:40">2024-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-24T05:49:57.109Z" title="更新于 2026-08-24 13:49:57">2026-08-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE/">个人项目</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="基于Qt的个人事务全自动化软件-DoQuick"><a href="#基于Qt的个人事务全自动化软件-DoQuick" class="headerlink" title="基于Qt的个人事务全自动化软件-DoQuick"></a>基于Qt的个人事务全自动化软件-DoQuick</h1><h2 id="开发背景"><a href="#开发背景" class="headerlink" title="开发背景"></a>开发背景</h2><p>作为班级团支书，班级里经常有一些表格数据收集、统计、分析的事物，比如每周都有“青年大学习”视频学习，我需要收集同学们的完成情况，并且统计、分析，及时提醒未完成的同学，最后还要做出报表反馈给老师。程序固定且繁琐，遂有了开发一款处理自己日常事务软件的想法，该软件应运而生。</p>
+<img src="https://i.postimg.cc/1y3phBYC/20260824132320432.png?dl=1" alt="image-20260824132320379" style="zoom:80%;">
+
+<p>至于为什么起名叫DoQuick，顾名思义该软件就是为了帮助我更快的完成那些程序固定繁琐的任务，可以说是为了提高效率，因此命名为DoQuick（做的更快）。</p>
+<img src="https://i.postimg.cc/HYDcx9Bk/20260824132440598.png?dl=1" alt="image-20260824132440544" style="zoom:50%;">
+
 <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
 <li>系统：Window 10</li>
 <li>IDE：Pycharm + QtCreator</li>
 <li>语言：Python 3.11.2</li>
 </ul>
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><blockquote>
-<p>每周都会有青年大学习的观看，我需要统计结果，因此采用金山文档收集数据，并且提醒忘记观看的同学，同时还要整理最终的表格提交上去。具体需求如下：</p>
-</blockquote>
 <ol>
-<li><p>爬取信息：每周的信息收集都是通过金山文档进行的，金山文档可以直接查看结果，统计信息在金山云文档里，金山文档能很方便的查看哪些人没提交但是却不能导出名单，如图所示：</p>
-<p><img src="https://i.postimg.cc/rsdDWsKT/screenshot-13.png"><br>所以需要借助爬虫获取完成名单。</p>
+<li>收集信息：我需要能收集到同学们的完成情况，并且还要尽可能及时。因为总不能最后一天才收集好，那样根本就不叫提醒了吧，应该叫“要你命”才对</li>
+<li>分析 &amp; 提醒：拿到名单了，我还要分析一下哪一些还没完成，然后还要去提醒这些同学。</li>
+<li>报表反馈：然后每周结束，我需要把结果做成明了的报表反馈给老师。</li>
+</ol>
+</blockquote>
+<p>于是乎，根据这几个需求，我想出了一条实现路径：</p>
+<ol>
+<li><p>对于收集信息：我用金山云文档做一个类似问卷一样的在线表单，把链接发到群里，大家只需要打开链接，选择自己的学号，然后上传自己的截图就好了（截图是俺们头头的要求），但是收集到的数据，只能网页看，而且不能导出excel，还要肉眼去分辨，非常麻烦。<img src="https://i.postimg.cc/Kcb0nLc0/20260824134215908.png?dl=1" alt="img">就是这种的，一个班级四十多个人，有时候你刚看完数据就又更新了，很麻烦。所以我需要一键获取实时数据，而且是未完成名单。所以就通过Python的爬虫脚本实现。思路大概如下：<br><img src="https://i.postimg.cc/bpchBFdd/20260824133747660.png?dl=1" alt="image-20260824133747601"></p>
 </li>
-<li><p>筛选名单：有时需要完成同学的名单，所以需要一个可以直接筛选对应分类的功能。</p>
+<li><p>对于分析和提醒：用上一步获取的数据，直接进行对比筛就行。提醒的话，我用的是QQ邮箱，因此还需要能一键获取未完成名单，并且一键发送提醒邮件。</p>
 </li>
-<li><p>一键提醒每位未完成的同学：群发基本不看，数据会很难看，所以需要单发。</p>
-</li>
-<li><p>自动化Excel事务：顾名思义，由于要需要提交数据表格，因此需要自动化生成表格，这种固定且繁琐的事务最适合自动化了。</p>
-</li>
-<li><p>自动打卡：其实这种脚本添加到系统计划里自动执行最方便了，但由于不是每天执行，而且每周我都会打开该软件，所以干脆就集成在这个软件里面了。</p>
+<li><p>对于报表反馈：因为报表的样式是一定的，区别只是数据不一样，因此我也打算通过Python做成一个程序，只需要一键就能导出现成的报表。</p>
 </li>
 </ol>
-<h2 id="功能设计与实现"><a href="#功能设计与实现" class="headerlink" title="功能设计与实现"></a>功能设计与实现</h2><h3 id="1-爬取信息"><a href="#1-爬取信息" class="headerlink" title="1. 爬取信息"></a>1. 爬取信息</h3><p>利用Selenium库，可以很方便的实现，大概思路如下：</p>
+<h2 id="功能设计与实现"><a href="#功能设计与实现" class="headerlink" title="功能设计与实现"></a>功能设计与实现</h2><blockquote>
+<p>功能列表大概如下：</p>
+<ol>
+<li>爬取信息：每周的信息收集都是通过金山文档进行的，金山文档可以直接查看结果，统计信息在金山云文档里，金山文档能很方便的查看哪些人没提交但是却不能导出名单，如图所示：<br>所以需要借助爬虫获取完成名单。</li>
+<li>筛选名单：有时需要完成同学的名单，所以需要一个可以直接筛选对应分类的功能。</li>
+<li>一键提醒每位未完成的同学：群发基本不看，数据会很难看，所以需要单发。</li>
+<li>自动化Excel事务：顾名思义，由于要需要提交数据表格，因此需要自动化生成表格，这种固定且繁琐的事务最适合自动化了。</li>
+<li>自动打卡：其实这种脚本添加到系统计划里自动执行最方便了，但由于不是每天执行，而且每周我都会打开该软件，所以干脆就集成在这个软件里面了。</li>
+</ol>
+</blockquote>
+<h3 id="1-爬取信息"><a href="#1-爬取信息" class="headerlink" title="1. 爬取信息"></a>1. 爬取信息</h3><p>利用Selenium库，可以很方便的实现，大概思路如下：</p>
 <img src="https://i.postimg.cc/mDbSMvxj/screenshot-14.png" style="zoom: 67%;">
 
 <ol>
