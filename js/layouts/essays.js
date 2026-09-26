@@ -1,0 +1,1 @@
+export default function initEssays(){const t=document.querySelectorAll(".essay-date");if(!t.length){return}t.forEach(t=>{const e=t.getAttribute("data-date");const n=config.language||"en";const a=moment(e).locale(n).calendar();t.textContent=a})}

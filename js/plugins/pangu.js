@@ -1,0 +1,1 @@
+export default function initPangu(){if(typeof pangu==="undefined"){return}pangu.spacingElementByClassName("markdown-body");pangu.autoSpacingPage()}
